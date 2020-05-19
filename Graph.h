@@ -19,12 +19,11 @@ class Graph
 		int edges = MAX_EDGES;
 		double map[MAX_VERTICES][MAX_VERTICES];
 
-
 		//initialize the class
-		bool init(void);
+		bool init(int v_number);
 
 		//set values to edges with parameter of density and distance range
-		bool generate(double edge_density, int distance_range[2]);
+		bool generate(double edge_density, int distance_range[2], int v_number);
 
 		//return the number of vertices
 		int V(void);

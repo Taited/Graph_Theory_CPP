@@ -6,6 +6,22 @@ using namespace std;
 
 const int SAMPLE_TIME = 100;
 
+//mst
+int main(void)
+{
+	ShortestPath find_path;
+	string file_addr = "SampleTestData_mst_data.txt";
+	find_path.init_from_file(file_addr);
+	cout << "The graph is shown below:" << endl;
+	find_path.graph.show_graph();
+	cout << endl << "The route is shown below:" << endl;
+	find_path.MiniSpanTree_Prim();
+	cout << endl << "The total cost is " << find_path.MiniSpanTree_Prim() << endl;
+	return 0;
+}
+
+//monte carlo simulation
+/*
 int main(void)
 {
 	double edge_density;
@@ -19,7 +35,7 @@ int main(void)
 	mean_distance = 0.0;
 	for (int i = 0; i < SAMPLE_TIME; i++)
 	{
-		find_path.init(edge_density, range);
+		find_path.init(edge_density, range, 50);
 		find_path.dijkstra(0);  // select node v0 as begining
 		mean_distance += find_path.calculate_mean_length();
 	}
@@ -30,11 +46,11 @@ int main(void)
 	mean_distance = 0.0;
 	for (int i = 0; i < SAMPLE_TIME; i++)
 	{
-		find_path.init(edge_density, range);
+		find_path.init(edge_density, range, 50);
 		find_path.dijkstra(0);  // select node v0 as begining
 		mean_distance += find_path.calculate_mean_length();
 	}
 	cout << "There average path length with density of " << edge_density << " is: " << mean_distance / SAMPLE_TIME << endl;
 	system("pause");
 	return 0;
-}
+}*/

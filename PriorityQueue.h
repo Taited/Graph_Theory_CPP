@@ -19,7 +19,6 @@ class PriorityQueue
 		//insert queue_element into queue
 		bool Insert(double queue_element);
 
-		//returns the top element of the queue.
-		int top(void);
+
 };
 

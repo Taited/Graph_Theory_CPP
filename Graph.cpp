@@ -23,8 +23,9 @@ inline int Graph::E(void)
 }
 
 //set the distances of all of the edges as infinity
-bool Graph::init(void)
+bool Graph::init(int v_number = MAX_VERTICES)
 {
+	this->vertices = v_number;
 	for (int i = 0; i < this->vertices; i++)
 	{
 		for (int j = i; j < this->vertices; j++)
@@ -42,9 +43,9 @@ bool Graph::init(void)
 	return true;
 }
 
-bool Graph::generate(double edge_density, int distance_range[2])
+bool Graph::generate(double edge_density, int distance_range[2], int v_number)
 {
-	if (!this->init())  //initiate firstly
+	if (!this->init(v_number))  //initiate firstly
 	{
 		return false;
 	}

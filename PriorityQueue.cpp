@@ -27,9 +27,3 @@ bool PriorityQueue::Insert(double queue_element)
 	this->queue.push_back(queue_element);
 	return true;
 }
-
-//returns the top element of the queue.
-int top(void)
-{
-	return 1;
-}
